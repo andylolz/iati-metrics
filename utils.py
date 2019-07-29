@@ -13,7 +13,7 @@ from worker import conn
 
 
 s3 = boto3.client('s3')
-bucket_name = os.getenv('S3_BUCKET_NAME', 'iati-data.codeforiati.org')
+bucket_name = os.getenv('S3_BUCKET_NAME')
 extra_args_xml = {'ACL': 'public-read', 'ContentType': 'text/xml'}
 extra_args = {'ACL': 'public-read', 'ContentType': 'application/json'}
 api_url = 'https://iatiregistry.org/api/3/action/package_show'

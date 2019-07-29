@@ -18,6 +18,7 @@ You can run this wherever, but here are some instructions to run on Heroku.
    ```
    heroku config:set AWS_ACCESS_KEY_ID=[AWS access key]
    heroku config:set AWS_SECRET_ACCESS_KEY=[AWS secret key]
+   heroku config:set S3_BUCKET_NAME=[name of S3 bucket]
    ```
  * push the app to heroku
    ```
