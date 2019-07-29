@@ -1,6 +1,6 @@
 # Parallel Registry Refresher
 
-This is a task-based IATI data downloader. Add downloaded data gets pushed to Amazon S3.
+This is a task-based IATI data downloader. All downloaded data gets pushed to Amazon S3.
 
 ## Usage
 
