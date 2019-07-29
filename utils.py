@@ -20,8 +20,12 @@ api_url = 'https://iatiregistry.org/api/3/action/package_show'
 
 
 def fetch_data(dataset_name):
-    meta = request_with_backoff(
-        'post', api_url, data={'id': dataset_name}).json()['result']
+    response = request_with_backoff(
+        'post', api_url, data={'id': dataset_name}).json()
+    if not response.get('success', False):
+        # something went wrong
+        return
+    meta = response.get('result', {})
     res = meta.get('resources', [])
     org = meta.get('organization')
     if res == [] or not org:
