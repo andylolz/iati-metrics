@@ -4,7 +4,7 @@ This is a task-based IATI data downloader. All downloaded data gets pushed to Am
 
 ## Setup
 
-You can run this wherever, but here are some instructions to run on Heroku.
+You can run this wherever, but here are some instructions to run on [Heroku](https://heroku.com). It assumes you have a Heroku account, and have the [heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) installed.
 
  * Create a new app:
    ```
@@ -37,6 +37,8 @@ heroku run python run.py enqueue
 ```
 
 You could add this as a cron job, or make it restart on completion so it crawls continuously.
+
+## Status
 
 You can check how many tasks are remaining in the queue using:
 ```
