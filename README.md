@@ -36,3 +36,8 @@ heroku run python run.py enqueue
 ```
 
 You could add this as a cron job, or make it restart on completion so it crawls continuously.
+
+You can check how many tasks are remaining in the queue using:
+```
+heroku run python run.py status
+```
