@@ -21,15 +21,24 @@ def enqueue():
 def status():
     """Show how many items remain in each queue."""
     low_q = Queue('low', connection=conn)
-    total_low = len(low_q)
     default_q = Queue('default', connection=conn)
-    total_default = len(default_q)
     high_q = Queue('high', connection=conn)
+    total_low = len(low_q)
+    total_default = len(default_q)
     total_high = len(high_q)
     click.echo('Current queue status:')
     click.echo(f'      Low: {total_low} items')
     click.echo(f'  Default: {total_default} items')
     click.echo(f'     High: {total_high} items')
+
+    total_failed_low = len(low_q.failed_job_registry)
+    total_failed_default = len(default_q.failed_job_registry)
+    total_failed_high = len(high_q.failed_job_registry)
+    click.echo('')
+    click.echo('Failed queue status:')
+    click.echo(f'      Low: {total_failed_low} items')
+    click.echo(f'  Default: {total_failed_default} items')
+    click.echo(f'     High: {total_failed_high} items')
 
 
 if __name__ == '__main__':

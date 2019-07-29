@@ -44,3 +44,10 @@ You can check how many tasks are remaining in the queue using:
 ```
 heroku run python run.py status
 ```
+
+## Requeuing failed jobs
+
+You can requeue failed jobs using:
+```
+heroku run rq requeue --queue default -u \$REDISTOGO_URL --all
+```
