@@ -23,9 +23,10 @@ def fetch_data(dataset_name):
     meta = request_with_backoff(
         'post', api_url, data={'id': dataset_name}).json()['result']
     res = meta.get('resources', [])
-    org_name = meta.get('organization', {}).get('name')
-    if res == [] or not org_name:
+    org = meta.get('organization')
+    if res == [] or not org:
         return
+    org_name = org.get('name')
     url = res[0]['url']
     headers = {
         'Accept': 'application/xhtml+xml,application/xml,*/*;q=0.9',
